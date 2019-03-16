@@ -343,6 +343,21 @@ public class AlgorithmTest {
         return re;
     }
 
+    /**
+     * 计算两个数的和
+     * @param num1
+     * @param num2
+     * @return
+     */
+    public static int Add(int num1,int num2) {
+        while(num2 != 0){
+            int temp = num1^num2;
+            num2 = (num1 & num2) << 1;
+            num1 = temp;
+        }
+        return num1;
+    }
+
 
     private static double fromRightAndFromRight(int[] temp, int[] num1, int[] num2, int len, int len2, boolean odd, int middle) {
         int tem ;
