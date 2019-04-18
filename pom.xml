@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.hxb</groupId>
-    <artifactId>algorithm-core</artifactId>
-    <version>1.0-SNAPSHOT</version>
-
+    <artifactId>data-structure-core</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
 </project>

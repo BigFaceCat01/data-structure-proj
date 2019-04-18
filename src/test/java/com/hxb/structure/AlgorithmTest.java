@@ -1,4 +1,4 @@
-package com.hxb.algorithm;
+package com.hxb.structure;
 
 import java.util.Arrays;
 import java.util.HashSet;

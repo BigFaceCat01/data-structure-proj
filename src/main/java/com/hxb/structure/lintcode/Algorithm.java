@@ -1,4 +1,4 @@
-package com.hxb.algorithm;
+package com.hxb.structure.lintcode;
 
 /**
  * @author Created by huang xiao bao
