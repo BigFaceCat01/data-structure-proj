@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author Created by huang xiao bao
@@ -353,6 +354,11 @@ public class AlgorithmTest {
         while(num2 != 0){
             int temp = num1^num2;
             num2 = (num1 & num2) << 1;
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             num1 = temp;
         }
         return num1;
