@@ -4,7 +4,7 @@ package com.hxb.structure.util;
  * @author Created by huang xiao bao
  * @date 2019-04-18 11:28:06
  */
-public final class SnowFlakesUtil {
+public class SnowFlakesUtil {
     /**
      * 开始时间截 (2015-01-01)
      */
@@ -17,38 +17,59 @@ public final class SnowFlakesUtil {
      * 数据标识所占位数
      */
     private static final long datacenterIdBits = 5L;
-    /**支持的最大机器id，结果是31 (这个移位算法可以很快的计算出几位二进制数所能表示的最大十进制数)*/
+    /**
+     * 支持的最大机器id，结果是31 (这个移位算法可以很快的计算出几位二进制数所能表示的最大十进制数)
+     */
     private static final long maxWorkerId = -1L ^ (-1L << workerIdBits);
-    /**支持的最大数据标识id，结果是31*/
+    /**
+     * 支持的最大数据标识id，结果是31
+     */
     private static final long maxDatacenterId = -1L ^ (-1L << datacenterIdBits);
-    /**序列在id中占的位数*/
+    /**
+     * 序列在id中占的位数
+     */
     private static final long sequenceBits = 12L;
-    /**机器ID向左移12位*/
+    /**
+     * 机器ID向左移12位
+     */
     private static final long workerIdShift = sequenceBits;
-    /**数据标识id向左移17位(12+5)*/
+    /**
+     * 数据标识id向左移17位(12+5)
+     */
     private static final long datacenterIdShift = sequenceBits + workerIdBits;
-    /**时间截向左移22位(5+5+12)*/
+    /**
+     * 时间截向左移22位(5+5+12)
+     */
     private static final long timestampLeftShift = sequenceBits + workerIdBits + datacenterIdBits;
-    /**生成序列的掩码，这里为4095 (0b111111111111=0xfff=4095)*/
+    /**
+     * 生成序列的掩码，这里为4095 (0b111111111111=0xfff=4095)
+     */
     private static final long sequenceMask = -1L ^ (-1L << sequenceBits);
 
-    /**工作机器ID(0~31)*/
+    /**
+     * 工作机器ID(0~31)
+     */
     private static long workerId = 0;
 
-    /**数据中心ID(0~31)*/
+    /**
+     * 数据中心ID(0~31)
+     */
     private static long datacenterId = 0;
 
-    /**毫秒内序列(0~4095)*/
+    /**
+     * 毫秒内序列(0~4095)
+     */
     private static long sequence = 0L;
 
-    /**上次生成ID的时间截*/
+    /**
+     * 上次生成ID的时间截
+     */
     private static long lastTimestamp = -1L;
 
     /**
-     *
-     * @param workerId
-     * @param datacenterId
-     * @return
+     * @param workerId 工作机器id
+     * @param datacenterId 数据中心id
+     * @return 分布式id
      */
     public static synchronized long nextId(long workerId, long datacenterId) {
         long timestamp = timeGen();
@@ -85,17 +106,17 @@ public final class SnowFlakesUtil {
     /**
      * 获得下一个ID (该方法是线程安全的)
      *
-     * @return
+     * @return 分布式id
      */
     public static synchronized long nextId() {
-        return nextId(workerId,datacenterId);
+        return nextId(workerId, datacenterId);
     }
 
     /**
      * 阻塞到下一个毫秒，直到获得新的时间戳
      *
-     * @param lastTimestamp
-     * @return
+     * @param lastTimestamp 上一个时间戳
+     * @return 新时间戳
      */
     private static long tilNextMillis(long lastTimestamp) {
         long timestamp = timeGen();
@@ -117,5 +138,6 @@ public final class SnowFlakesUtil {
     /**
      *
      */
-    private SnowFlakesUtil(){}
+    private SnowFlakesUtil() {
+    }
 }
