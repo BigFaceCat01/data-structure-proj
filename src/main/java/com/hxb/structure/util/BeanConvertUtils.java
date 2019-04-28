@@ -35,7 +35,7 @@ public class BeanConvertUtils {
      * @param <T> 类型
      * @return 结果列表
      */
-    public static <T> List<T> convertList(List<Object> sources,Class<T> target){
+    public static <T> List<T> convertList(List sources,Class<T> target){
         if(Objects.isNull(sources) || sources.isEmpty()){
             return Collections.emptyList();
         }
