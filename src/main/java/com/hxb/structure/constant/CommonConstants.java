@@ -11,4 +11,12 @@ public final class CommonConstants {
     public static final int HEX = 16;
     public static final String STRING_ZERO = "0";
     public static final String MD5 = "MD5";
+    public static final String DOT = ".";
+    public static final String SEPARATOR = "/";
+    public static final String PROTOCOL_FILE = "file";
+    public static final String PROTOCOL_JAR = "jar";
+    public static final String DOT_CLASS = ".class";
+    public static final String EMPTY_STRING = "";
+    public static final int DOT_CLASS_LENGTH = DOT_CLASS.length();
+
 }
