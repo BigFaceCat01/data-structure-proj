@@ -18,6 +18,8 @@
         <slf4j.version>1.7.21</slf4j.version>
         <lombok.version>1.16.22</lombok.version>
         <logback.classic.version>1.2.3</logback.classic.version>
+        <java.jwt.version>3.8.0</java.jwt.version>
+        <jjwt.version>0.9.1</jjwt.version>
     </properties>
 
     <dependencies>
@@ -32,6 +34,14 @@
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
+
+        <!-- jwt -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>${jjwt.version}</version>
+        </dependency>
+        <!-- jwt -->
 
         <dependency>
             <groupId>ch.qos.logback</groupId>
