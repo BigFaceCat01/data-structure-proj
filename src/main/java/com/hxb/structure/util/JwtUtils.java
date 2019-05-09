@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class JwtUtils {
     /**
-     * 签发JWT,基于java-jwt依赖
+     * 签发JWT
      * @param content JSON数据字符串
      * @param expire token 过期时间
      * @param unit 时间单位
